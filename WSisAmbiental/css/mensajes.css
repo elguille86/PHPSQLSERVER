@@ -1,0 +1,66 @@
+/*Desarrollado por Guillermo Rodriguez*/
+
+@charset "utf-8";
+ 
+	.messagebox{
+		position:absolute;
+		width:100px;
+		margin-left:30px;
+		border:1px solid #c93;
+		background:#ffc; 
+		padding: 3px 10px 3px 10px; 
+		margin-top:-10px; 
+		font-size: 0.7em;
+	}
+	.messageboxok{
+		position:absolute;
+		width:auto;
+		margin-left:30px;
+		border:1px solid #349534;
+		background:#C9FFCA;
+		padding: 3px 10px 3px 10px;
+		font-weight:bold;
+		color:#008000;
+	}
+	.messageboxerror{
+		position:absolute;
+		width:auto;
+		margin-left:30px;
+		border:1px solid #CC0000;
+		background:#F7CBCA;
+		padding: 3px 10px 3px 10px;
+		font-weight:bold;
+		color:#CC0000;
+	}
+
+
+.info, .exito, .alerta, .error {
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:13px;
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    position:relative;
+}
+.info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../images/info.png');
+}
+.exito {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../images/exito.png');
+}
+.alerta {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../images/alerta.png');
+}
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../images/error.png');
+}

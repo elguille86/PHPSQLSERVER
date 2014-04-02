@@ -1,0 +1,23 @@
+<ifmodule mod_expires.c>
+
+ 	ExpiresActive On
+ 	ExpiresDefault A3600
+ 	<filesmatch ".(jpg|JPG|gif|GIF|png|ico)$"> 
+ 		# 1 weeks
+ 		ExpiresDefault A604800
+ 		Header append Cache-Control "public"
+ 	</FilesMatch>
+ 	<FilesMatch ".(xml|txt|html|php)$">
+ 		# 2 hours
+ 		# ExpiresDefault A604800
+		ExpiresDefault A3
+ 		Header append Cache-Control "public"
+ 	</FilesMatch>
+ 	<FilesMatch ".(js|css|swf)$">
+ 		# 5 munite
+ 		# ExpiresDefault A300
+		ExpiresDefault A3
+ 		Header append Cache-Control "public"
+ 	</FilesMatch>
+
+</ifmodule>

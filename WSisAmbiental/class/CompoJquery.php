@@ -1,0 +1,13 @@
+<?php
+class cls_Jquerys {
+ 	function PaginacionGrid($NomGrid){
+		$conf = " var self = this; var pagerrenderer = function () {
+        var element = $(\"<div style='margin-left: 10px; margin-top: 5px; width: 100%; height: 100%;'></div>\"); var datainfo = $(\"#$NomGrid\").jqxGrid('getdatainformation'); var paginginfo = datainfo.paginginformation; var leftButton = $(\"<div style='padding: 0px; float: left;'><div style='margin-left: 9px; width: 16px; height: 16px;'></div></div>\"); leftButton.find('div').addClass('icon-arrow-left'); leftButton.width(36); leftButton.jqxButton({ theme: theme }); var rightButton = $(\"<div style='padding: 0px; margin: 0px 3px; float: left;'><div style='margin-left: 9px; width: 16px; height: 16px;'></div></div>\"); rightButton.find('div').addClass('icon-arrow-right'); rightButton.width(36); rightButton.jqxButton({ theme: theme }); leftButton.appendTo(element); rightButton.appendTo(element); var label = $(\"<div style='font-size: 11px; margin: 2px 3px; font-weight: bold; float: left;'></div>\"); label.text(\"1-\" + paginginfo.pagesize + ' de ' + datainfo.rowscount); label.appendTo(element); self.label = label; var handleStates = function (event, button, className, add) { button.bind(event, function () { if (add == true) { button.find('div').addClass(className); } else button.find('div').removeClass(className); }); }
+        if (theme != '') { handleStates('mousedown', rightButton, 'icon-arrow-right-selected-' + theme, true); handleStates('mouseup', rightButton, 'icon-arrow-right-selected-' + theme, false); handleStates('mousedown', leftButton, 'icon-arrow-left-selected-' + theme, true); handleStates('mouseup', leftButton, 'icon-arrow-left-selected-' + theme, false); handleStates('mouseenter', rightButton, 'icon-arrow-right-hover-' + theme, true); handleStates('mouseleave', rightButton, 'icon-arrow-right-hover-' + theme, false); handleStates('mouseenter', leftButton, 'icon-arrow-left-hover-' + theme, true); handleStates('mouseleave', leftButton, 'icon-arrow-left-hover-' + theme, false); }  rightButton.click(function () { $(\"#$NomGrid\").jqxGrid('gotonextpage'); }); leftButton.click(function () { $(\"#$NomGrid\").jqxGrid('gotoprevpage'); }); return element;
+      }		
+      $(\"#$NomGrid\").bind('pagechanged', function () { var datainfo = $(\"#$NomGrid\").jqxGrid('getdatainformation'); var paginginfo = datainfo.paginginformation; self.label.text(1 + paginginfo.pagenum * paginginfo.pagesize + \"-\" + Math.min(datainfo.rowscount, (paginginfo.pagenum + 1) * paginginfo.pagesize) + ' de ' + datainfo.rowscount); });		 ";
+		return  $conf;
+	}
+}
+ 
+?>
